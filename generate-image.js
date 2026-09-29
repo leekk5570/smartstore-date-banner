@@ -14,9 +14,9 @@ const OUTPUT = 'restock-notice.png';
   try {
     const page = await browser.newPage();
     await page.emulateTimezone('Asia/Seoul');
-    await page.setViewport({ width: 860, height: 1493, deviceScaleFactor: 1 });
+    await page.setViewport({ width: 1000, height: 1737, deviceScaleFactor: 1 });
     await page.goto(PAGE_URL, { waitUntil: 'networkidle0', timeout: 30000 });
-    await page.screenshot({ path: path.join(__dirname, OUTPUT), clip: { x: 0, y: 0, width: 860, height: 1493 } });
+    await page.screenshot({ path: path.join(__dirname, OUTPUT), clip: { x: 0, y: 0, width: 1000, height: 1737 } });
     if (!fs.existsSync(path.join(__dirname, OUTPUT))) throw new Error('Image was not created.');
   } finally {
     await browser.close();
